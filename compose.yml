@@ -1,3 +1,5 @@
+## YAML Template.
+---
 services:
   postgres:
     image: 'postgres:latest'
