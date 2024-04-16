@@ -11,5 +11,5 @@ public interface UserHttpClient {
     List<User> findAll();
 
     @GetExchange("/users/{id}")
-    User findById(@PathVariable Integer id);
+    User findById(@PathVariable(name = "id") Integer id);
 }
