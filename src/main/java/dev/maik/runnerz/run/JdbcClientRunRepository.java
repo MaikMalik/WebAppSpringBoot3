@@ -19,6 +19,7 @@ public class JdbcClientRunRepository {
         this.jdbcClient = jdbcClient;
     }
 
+
     /**
      * Encontrar todas las ejecuciones en la base de datos
       */

@@ -18,23 +18,6 @@ public class RunController {
         this.runRepository = runRepository;
     }
 
-
-    @GetMapping("")
-    List<Run> findAll(){
-
-        return runRepository.findAll();
-    }
-
-    @GetMapping("/{id}")
-    Run findById(@PathVariable Integer id){
-
-        Optional<Run> run = runRepository.findById(id);
-        if(run.isEmpty()){
-            throw new RunNotFoundException();
-        }
-        return run.get();
-    }
-
     //post
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping("")
@@ -61,4 +44,22 @@ public class RunController {
     List<Run> findByLocation(@PathVariable String location){
         return runRepository.findAllByLocation(location);
     }
+
+    @GetMapping("")
+    List<Run> findAll(){
+
+        return runRepository.findAll();
+    }
+
+    @GetMapping("/{id}")
+    Run findById(@PathVariable Integer id){
+
+        Optional<Run> run = runRepository.findById(id);
+        if(run.isEmpty()){
+            throw new RunNotFoundException();
+        }
+        return run.get();
+    }
+
+
 }
